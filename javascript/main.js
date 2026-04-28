@@ -16,3 +16,5 @@ let esCasado = false; //boolean
 // constante
 const PI = 3.1416; // double/float
 const SALUDO = "Hola Mundo!"; //string
+
+PI;
