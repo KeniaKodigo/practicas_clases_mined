@@ -1,0 +1,17 @@
+
+/** seleccionado por clase (.) */
+.preparation-time{
+    background-color: #f3e5d8;
+    padding: 1rem;
+}
+
+/** seleccionando un elemento hijo */
+.preparation-time h3{
+    color: #752c49;
+}
+
+/** seleccionado por ID (#) 
+#time{
+
+}
+*/
