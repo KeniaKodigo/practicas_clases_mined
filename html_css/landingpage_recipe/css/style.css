@@ -29,7 +29,18 @@ figure img{
 .title{
     margin: 1rem 0;
     font-style: italic;
+    &:hover{
+        color: #248f1c;
+    }
+
+    &::after{
+        content: "☕🍪";
+    }
 }
+
+/*.title:hover{
+    color: #248f1c;
+}*/
 
 .paragrahp{
     margin-bottom: 1rem;
@@ -62,6 +73,12 @@ figure img{
 /** agregando espacio entre linea en las listas */
 .container-ingredients ul, .container-instructions ol{
     line-height: 1.6;
+}
+
+/** alterando los elementos de la lista (los numeros) */
+ol li::marker{
+    color: #844631;
+    font-weight: bold;
 }
 
 table{

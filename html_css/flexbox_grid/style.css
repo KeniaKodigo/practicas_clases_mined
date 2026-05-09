@@ -1,0 +1,11 @@
+.box{
+    background-color: blueviolet;
+    width: 200px;
+    height: 200px;
+    color: #fff;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center; /** vertical **/
+    justify-content: center; /** horizontal **/
+
+}
