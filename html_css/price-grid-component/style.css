@@ -1,0 +1,155 @@
+:root {
+    --color-bg-page:        #dce8f0;
+    --color-bg-card-top:    #ffffff;
+    --color-bg-card-bottom: #3bbfb8;       /* teal principal */
+    --color-bg-benefits:    #2fada6;       /* teal ligeramente más oscuro */
+
+    --color-title:          #3bbfb8;
+    --color-guarantee:      #c8d63a;       /* verde-amarillo */
+    --color-text-muted:     #9babb5;
+    --color-text-white:     #ffffff;
+    --color-cta-bg:         #c8d63a;
+    --color-cta-text:       #ffffff;
+
+    --font-base:            'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    --radius-card:          12px;
+    --radius-btn:           6px;
+
+    --space-xs:  0.5rem;
+    --space-sm:  1rem;
+    --space-md:  1.5rem;
+    --space-lg:  2rem;
+    --space-xl:  2.5rem;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-base);
+    background-color: var(--color-bg-page);
+    /* min-height: 100vh; */
+}
+
+.page-wrapper {
+  /* Flexbox: centra la card horizontal y verticalmente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: var(--space-lg);
+}
+
+.pricing-card {
+    width: 100%;
+    max-width: 640px;
+    border-radius: var(--radius-card);
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+/** contenedor de descripcion */
+.card__header {
+    background-color: var(--color-bg-card-top);
+    padding: var(--space-xl) var(--space-xl) var(--space-lg);
+}
+
+.card__title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--color-title);
+    line-height: 1.2;
+}
+
+.card__guarantee {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--color-guarantee);
+}
+
+.card__description {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+}
+
+/** contenedor de precio + beneficios */
+.card__body {
+    background-color: var(--color-bg-card-bottom);
+}
+
+/* seccion de "precio" */
+.card__pricing {
+    gap: var(--space-sm);
+    padding: var(--space-lg) var(--space-lg) var(--space-xl);
+}
+
+.card__plan-name {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--color-text-white);
+}
+
+.card__price-wrap {
+    gap: var(--space-xs);
+}
+
+.card__price {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: var(--color-text-white);
+    line-height: 1;
+}
+
+.card__price-period {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.card__price-note {
+    font-size: 0.85rem;
+    color: var(--color-text-white);
+}
+
+.card__cta {
+    display: inline-block;
+    margin-top: var(--space-xs);
+    padding: 0.85rem 1.5rem;
+    background-color: var(--color-cta-bg);
+    color: var(--color-cta-text);
+    font-size: 1rem;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    border-radius: var(--radius-btn);
+}
+
+/* --- seccion de beneficios --------------------------- */
+.card__benefits {
+    gap: var(--space-sm);
+    padding: var(--space-lg) var(--space-lg) var(--space-xl);
+    background-color: var(--color-bg-benefits);
+}
+
+.card__benefits-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--color-text-white);
+}
+
+.card__benefits-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.card__benefits-list li {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.4;
+}
