@@ -6,12 +6,24 @@
     <title>Document</title>
 </head>
 <body>
-    <h1 id="title">Introduccion al DOM con Javascript</h1>
+    <h1 id="title" onclick="enviarConfetti()">Introduccion al DOM con Javascript</h1>
+    <button onclick="enviarConfetti()">Dale Click!</button>
 
+    <!-- el onsubmit hace una recarga a la pagina, cuando le das "submit" al boton -->
+    <form action="" onsubmit="envioDatos()">
+        <input type="text" placeholder="Ingresa tu nombre" id="input_name" class="entrada_titulo">
+        <input type="number" placeholder="Ingresa un numero" id="input_age" class="entrada_titulo">
 
-    <form action="">
-        <input type="text" placeholder="Ingresa tu nombre" class="entrada_titulo">
+        <button type="submit">Enviar Datos</button>
     </form>
+
+    <button onclick="envioDatos()">Alerta</button>
+    <section id="contenedor_dinamico">
+        <!-- Aqui van parrafos hechos desde javascript -->
+    </section>
 </body>
 <script src="main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@hiseb/confetti@2.1.0/dist/confetti.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </html>
