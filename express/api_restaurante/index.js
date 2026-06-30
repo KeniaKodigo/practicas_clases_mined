@@ -3,6 +3,7 @@ const app = express()
 // llamando las rutas de las mesas
 const mesasRoutes = require('./routes/mesa.routes')
 app.use(express.json())
+const authRoutes = require('./routes/auth.routes')
 
 app.listen(3000, () => {
     console.log("Hola, este es el servidor http://localhost:3000/")
@@ -19,3 +20,4 @@ app.get('/', (req, res) => {
 
 // usando las rutas de las mesas
 app.use('/api/v1/mesas', mesasRoutes)
+app.use('/api/v1/auth', authRoutes)

@@ -47,9 +47,49 @@ const crearMesa = async (req, res) => {
     })
 }
 
+// actualizar una mesa por ID
+const actualizarMesa = async (req, res) => {
+    const id = Number(req.params.id)
+
+    const existe = await prisma.mesa.findUnique({ where: { id } })
+    if (!existe) {
+        return res.status(404).json({ error: 'Mesa no encontrada' })
+    }
+
+    // update mesas set numero = 12, capacidad = 10, disponible = true where id = 2
+    const mesa = await prisma.mesa.update({
+        where: { id },
+        data: req.body //numero, capacidad, disponible
+    })
+
+    res.status(200).json({
+        message: 'Mesa actualizada exitosamente',
+        mesa
+    })
+}
+
+// metodo que desactiva una mesa
+const desactivarMesa = async (req, res) => {
+    const id = Number(req.params.id)
+
+    const existe = await prisma.mesa.findUnique({ where: { id } })
+    if (!existe) {
+        return res.status(404).json({ error: 'Mesa no encontrada' })
+    }
+
+    await prisma.mesa.update({
+        where: { id },
+        data: { disponible: false }
+    })
+
+    res.status(200).json({ message: 'Mesa no disponible' })
+}
+
 // exportando los metodos para ocuparlos en cualquier lugar
 module.exports = {
     obtenerMesas,
     obtenerMesaById,
-    crearMesa
+    crearMesa,
+    actualizarMesa,
+    desactivarMesa
 }

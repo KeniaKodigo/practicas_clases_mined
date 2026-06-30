@@ -6,7 +6,9 @@ const router = express.Router()
 const {
     obtenerMesas,
     obtenerMesaById,
-    crearMesa
+    crearMesa,
+    actualizarMesa,
+    desactivarMesa
 } = require('../controller/mesa.controller')
 
 // creando las rutas (/api/mesas)
@@ -14,6 +16,8 @@ router.get('/', obtenerMesas) // /api/v1/mesas/
 // ruta con parametro
 router.get('/:id', obtenerMesaById) // /api/v1/mesas/:id
 router.post('/', crearMesa) // /api/v1/mesas/
+router.put('/:id', actualizarMesa) // /api/v1/mesas/:id
+router.patch('/:id', desactivarMesa) // /api/v1/mesas/:id
 
 // exportando las rutas
 module.exports = router
