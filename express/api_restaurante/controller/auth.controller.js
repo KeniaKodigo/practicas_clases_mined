@@ -18,7 +18,7 @@ const registro = async (req, res) => {
     }
 
     // encriptar la password
-    const passwordEncriptada = await bcrypt.hash(password, 10)
+    const passwordEncriptada = await bcrypt.hash(password, 10) //es un hash
 
     // crear el usuario
     const nuevoUsuario = await prisma.usuario.create({
@@ -35,7 +35,7 @@ const registro = async (req, res) => {
             id: nuevoUsuario.id,
             nombre: nuevoUsuario.nombre,
             correo: nuevoUsuario.correo,
-            rol: nuevoUsuario.rol
+            rol: nuevoUsuario.rol //por defecto el usuario es un cliente
         }
     })
 }
@@ -79,5 +79,24 @@ const login = async (req, res) => {
     })
 }
 
-module.exports = { registro, login }
+
+// GET /api/auth/perfil
+const perfil = async (req, res) => {
+    //select id, nombre, correo, rol from usuarios where id = ?
+    const usuario = await prisma.usuario.findUnique({
+        where: { id: req.usuario.id }, // el id lo sacamos del token, de la persona que inicio sesion
+        select: {
+            id: true,
+            nombre: true,
+            correo: true,
+            rol: true,
+            createdAt: true
+        }
+    })
+
+    res.status(200).json(usuario)
+}
+
+
+module.exports = { registro, login, perfil }
 
